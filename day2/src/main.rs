@@ -8,10 +8,8 @@ fn part1() {
     let mut horizontal:i32 = 0;
     let mut depth:i32 = 0;
     let mut parts:Vec<String>;
-    let mut line_string:String;
     for line in buf.lines() {
-        line_string = line.expect("unable to read line");
-        parts = line_string.split(" ").map(String::from).collect();
+        parts = line.unwrap().split(" ").map(String::from).collect();
         let first_char = parts[0].chars().nth(0).expect("no first char");
         let num = parts[1].parse::<i32>().unwrap();
         match first_char {
@@ -30,10 +28,8 @@ fn part2() {
     let mut aim:i32 = 0;
     let mut depth:i32 = 0;
     let mut parts:Vec<String>;
-    let mut line_string:String;
     for line in buf.lines() {
-        line_string = line.expect("unable to read line");
-        parts = line_string.split(" ").map(String::from).collect();
+        parts = line.unwrap().split(" ").map(String::from).collect();
         let first_char = parts[0].chars().nth(0).expect("no first char");
         let num = parts[1].parse::<i32>().unwrap();
         match first_char {
