@@ -53,7 +53,6 @@ fn part2() {
             }
         }
     }
-    println!("buckets = {:?}", flat_tree);
 
     let mut o2 = 0;
     let mut o2_pos = 1;
@@ -68,7 +67,6 @@ fn part2() {
         o2_pos = o2_pos*2 + 1;
 
         co2 <<= 1;
-        println!("0 = {}, 1 = {}", flat_tree[co2_pos], flat_tree[co2_pos+1]);
         if flat_tree[co2_pos] == 0 || (flat_tree[co2_pos+1] != 0 && flat_tree[co2_pos+1] < flat_tree[co2_pos]) {
             co2 += 1;
             co2_pos += 1;
