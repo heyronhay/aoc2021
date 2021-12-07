@@ -32,20 +32,25 @@ fn calc_num_fish(days:usize) {
         new_fish[old_new_zero_day] += num_new_fish;
     }
 
-    let total:usize = orig_fish.iter().sum::<usize>() + new_fish.iter().sum::<usize>();
-    println!("total after {} days = {}", days, total);
-
+    
 
 }
-fn part1() {
-    calc_num_fish(80);
-}
+//fn part1() {
+//    calc_num_fish(80);
+//}
 
 fn part2() {
-    calc_num_fish(256);
+    const LOOPS:u32 = 100000;
+    use std::time::Instant;
+    let now = Instant::now();
+    for _ in 0..LOOPS {
+        calc_num_fish(256);
+    }
+    let elapsed = now.elapsed();
+    println!("Elapsed: {:.2?}", elapsed / LOOPS);
 }
 
 fn main() {
-    part1();
+    //part1();
     part2();
 }
